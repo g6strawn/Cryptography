@@ -1,0 +1,175 @@
+/* Encrypt */
+#cletus {
+  display: none;
+  top: 1em;  left: 1em;
+  max-width: 270px;
+  word-wrap: break-word;
+}
+
+#npq {
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+#primes {
+  width: 70%;
+  max-width: 95%;
+  padding: 0.25em;
+  border: 0.5em ridge;
+  background-color: beige;
+}
+#primes+form {
+  display: inline-block;
+  margin-left: 1em;
+  vertical-align: top;
+}
+
+#caesar {
+  text-align: center;
+  font-family: monospace, Courier, "Courier New";
+}
+#caesar button { padding: 2px 8px; }
+#caesar input  { padding: 2px; }
+#caesarIn, #caesarOut {
+  width: 100%;
+  margin-top: 5px;
+  padding: 0 0.25em;
+  resize: none;
+}
+#caesarKey, #caesarOut { color: #66183e; }
+
+/* Encryption game */
+#KeyGame {
+  color:white;  background: #224422 url('bg_cypher.jpg');
+  margin: 1em auto;  padding: 1em 0.5em 2em 0.5em;
+  position: relative;
+  text-align: center; /* center inline-block elements */
+}
+
+#KeyGame>h1 {
+  font: bold 30px Sans-Serif;
+  letter-spacing: 0.05em;  word-spacing: 0.2em;
+  padding: 0 0.5em;
+  text-shadow:
+    0 1px 0 #a0a0a0,
+    0 2px 0 #989898,
+    0 3px 0 #909090,
+    0 4px 0 #888888,
+    0 5px 0 #808080,
+    0 0 5px rgba(0,0,0,.3),
+    0 1px 3px rgba(0,0,0,.6),
+    1px 2px 5px rgba(0,0,0,.75),
+    2px 4px 10px rgba(0,0,0,.8),
+    5px 10px 10px rgba(0,0,0,.8),
+    15px 20px 20px rgba(0,0,0,.65);
+}
+
+#KeyGame ul.tabs, #KeyGame section.tab { width: 500px; }
+
+ul.tabs {
+  list-style: none;
+  margin: 0 auto;  padding-left: 1em;
+}
+ul.tabs li {
+  display: inline-block;
+  float: left;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -1px;
+  margin-right: 0.25em;
+  padding: 0.25em 0.75em;
+  color: #D0B398;  background-color: #724C29;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px 5px 0 0;
+}
+ul.tabs li:hover:not(.tab_active) { color: #FBE6D4;  background-color: #724C29; }
+ul.tabs li.tab_active       { background-color: #724C29;  border-bottom-color: #724C29; }
+ul.tabs li:not(.tab_active) { background-color: #573b20;  border-bottom-color: black; }
+
+section.tab {
+  display: none;
+  color: #D0B398;  background-color: #724C29;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 3px 5px rgba(0,0,0,0.4);
+}
+
+#KeyGame .instructions { text-align: left; }
+#KeyGame .feedback { color: #ffb000; }
+#KeyGame .success { color: #ffbc7e }
+
+#KeyGame button {
+  display: inline-block;
+  padding: 0.1em 1em;
+  font-size: 1.25em;
+}
+#KeyGame button:focus { outline:none; }
+#KeyGame button[type=submit] { display: none; }
+
+#KeyGame .pressable {
+  color: #D0B398;  background-color: #1F5729;  background: linear-gradient(#1F5729, #0F4118);
+  border: solid #03290A 4px;
+  border-radius: 28px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+  text-shadow: 0px 0px 3px black;
+}
+#KeyGame .pressable:hover {
+  color: #FBE6D4;  background-color: #366B3F;  background: linear-gradient(#366B3F, #1F5729);
+}
+#KeyGame .pressable:active { background: #A2C0A7; }
+
+#KeyGame .keys { clear:both; }
+#KeyGame .keys figure {
+  display: inline-block;
+  margin: 0 2px 0.5em 2px;  padding: 0.25em;
+}
+#KeyGame .keys figcaption {
+  width: 120px;
+  margin-bottom: 0.25em;  padding: 0;
+  font-size: smaller;
+  white-space: nowrap;
+}
+
+#KeyGame img {
+  display: block;
+  margin: 0 auto;
+  width: 110px;  height: 45px;
+  box-sizing: border-box; /* don't change size when drop border is added */
+}
+#KeyGame .drag { cursor: move; }
+
+#KeyGame .dropzone {
+  background: #724C29 top no-repeat;
+  margin: 0 auto;
+  width: 450px;  height: 260px;
+}
+#KeyGame #Level1>.dropzone { background-image: url('level1.gif'); }
+#KeyGame #Level2>.dropzone { background-image: url('level2.gif'); }
+#KeyGame #Level3>.dropzone { background-image: url('level3.gif'); }
+#KeyGame #Level4>.dropzone { background-image: url('level4.gif'); }
+#KeyGame #Level5>.dropzone { background-image: url('level4.gif'); }
+
+#KeyGame input {
+  display: block;
+  margin: 8px auto;
+  padding: 0 2px;
+  width: 108px;
+  border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alice, .cloud, .bob {
+  display: inline-block;
+  margin-top: 16px;  padding: 10px;
+  color: black;
+  vertical-align: top;
+  position: relative;
+}
+.cloud {
+  width: 164px;
+  text-align: center;
+}
